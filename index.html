@@ -17,6 +17,12 @@
     <title></title>
 </head>
 <body>
+    <!-- ng-controller is an angular directive, binding the functions and data stored in a controller to html elements-->
+    <div ng-controller="StoreController as store">
+        <h1> {{store.product.name}} </h1>
+        <h2> ${{store.product.price}} </h2>
+        <p> {{store.product.description}} </p>
+    </div>
 
 </body>
 </html>
