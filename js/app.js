@@ -4,13 +4,25 @@
 
     // The controller is attached to (inside) our app.
     app.controller('StoreController', function(){
-        this.product = gem;
+        this.product = gems;
+
     });
 
-    var gem = {
-        name: 'Dodecahedron',
-        price: 2.95,
-        description: '. . .',
-    }
+    var gems = [
+        {
+            name: 'Dodecahedron',
+            price: 2.95,
+            description: 'This bomb gem won\'t lose it\'s luster or shine',
+            canPurchase: true,
+            soldOut: false
+        },
+        {
+            name: 'Pentagonal Gem',
+            price: 2.95,
+            description: 'This bomb gem won\'t lose it\'s luster or shine',
+            canPurchase: true,
+            soldOut: false
+        }
+    ];
 
 })();

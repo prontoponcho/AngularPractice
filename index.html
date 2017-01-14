@@ -19,9 +19,17 @@
 <body>
     <!-- ng-controller is an angular directive, binding the functions and data stored in a controller to html elements-->
     <div ng-controller="StoreController as store">
-        <h1> {{store.product.name}} </h1>
-        <h2> ${{store.product.price}} </h2>
-        <p> {{store.product.description}} </p>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="product in store.product">
+                <div ng-hide="product.soldOut">
+                    <h3> {{product.name}}
+                        <em class="pull-right">${{product.price}}</em>
+                    </h3>
+                    <p> {{product.description}} </p>
+                    <button ng-show="product.canPurchase"> Add to Cart </button>
+                </div>
+            </li>
+        </ul>
     </div>
 
 </body>
