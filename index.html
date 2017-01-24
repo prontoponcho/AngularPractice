@@ -3,6 +3,7 @@
 <html ng-app="store">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -23,9 +24,14 @@
             <li class="list-group-item" ng-repeat="product in store.product">
                 <div ng-hide="product.soldOut">
                     <h3> {{product.name}}
-                        <em class="pull-right">${{product.price}}</em>
+                        <em class="pull-right">
+                        <!-- currency is a filter that price is piped through. the number is formatted to the localized currency  -->
+                        {{product.price | currency}}</em>
                     </h3>
                     <p> {{product.description}} </p>
+                    <div>
+                        <img ng-src="{{product.images[0].full}}"/>
+                    </div>
                     <button ng-show="product.canPurchase"> Add to Cart </button>
                 </div>
             </li>

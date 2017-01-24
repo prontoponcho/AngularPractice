@@ -11,17 +11,30 @@
     var gems = [
         {
             name: 'Dodecahedron',
-            price: 2.95,
+            price: 2,
             description: 'This bomb gem won\'t lose it\'s luster or shine',
             canPurchase: true,
-            soldOut: false
+            soldOut: false,
+            images: [
+                {
+                    full: 'img/dodecahedron-full.jpg',
+                    thumb: null
+                }
+            ]
         },
         {
             name: 'Pentagonal Gem',
             price: 2.95,
             description: 'This bomb gem won\'t lose it\'s luster or shine',
             canPurchase: true,
-            soldOut: false
+            soldOut: false,
+            images: [
+                {
+                    full: 'img/pentagonal-full.jpg',
+                    thumb: null
+                }
+            ]
+
         }
     ];
 
