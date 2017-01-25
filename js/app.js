@@ -38,4 +38,16 @@
         }
     ];
 
+    app.controller('PanelController', function(){
+        this.tab = 1;
+
+        this.isSelected = function(val) {
+            return this.tab === val;
+        };
+
+        this.setTab = function(val) {
+            this.tab = val;
+        };
+    });
+
 })();

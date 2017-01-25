@@ -4,6 +4,11 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -28,12 +33,42 @@
                         <!-- currency is a filter that price is piped through. the number is formatted to the localized currency  -->
                         {{product.price | currency}}</em>
                     </h3>
-                    <p> {{product.description}} </p>
+                    <!-- <p> {{product.description}} </p> -->
                     <div>
                         <img ng-src="{{product.images[0].full}}"/>
                     </div>
                     <button ng-show="product.canPurchase"> Add to Cart </button>
                 </div>
+
+                <!-- ng-init allows us to evaluate an expression in the current scope -->
+                <section ng-controller="PanelController as panel">
+                    <ul class="nav nav-pills">
+                        <!-- ng-class takes an object. the key is the value of the class if the following expression evaluates to true   -->
+                        <li ng-class="{ active: panel.isSelected(1) }">
+                            <a href="" ng-click="panel.setTab(1)">Description</a>
+                        </li>
+                        <li ng-class="{ active: panel.isSelected(2) }">
+                            <a href="" ng-click="panel.setTab(2)">Specification</a>
+                        </li>
+                        <li ng-class="{ active: panel.isSelected(3) }">
+                            <a href="" ng-click="panel.setTab(3)">Reviews</a>
+                        </li>
+                    </ul>
+
+                    <div class="panel" ng-show="panel.isSelected(1)">
+                        <h4>Description</h4>
+                        <p>{{product.description}}</p>
+                    </div>
+                    <div class="panel" ng-show="panel.isSelected(2)">
+                        <h4>Specification</h4>
+                        <blockquote>None yet</blockquote>
+                    </div>
+                    <div class="panel" ng-show="panel.isSelected(3)">
+                        <h4>Reviews</h4>
+                        <blockquote>None yet</blockquote>
+                    </div>
+                </section>
+
             </li>
         </ul>
     </div>
