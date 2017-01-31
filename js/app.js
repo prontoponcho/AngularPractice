@@ -20,6 +20,18 @@
                     full: 'img/dodecahedron-full.jpg',
                     thumb: null
                 }
+            ],
+            reviews: [
+                {
+                    stars: 5,
+                    body: 'I love this product!',
+                    author: 'joe@thomas.com'
+                },
+                {
+                    stars: 1,
+                    body: 'This product stinks.',
+                    author: 'tim@hater.com'
+                }
             ]
         },
         {
@@ -32,6 +44,18 @@
                 {
                     full: 'img/pentagonal-full.jpg',
                     thumb: null
+                }
+            ],
+            reviews: [
+                {
+                    stars: 4,
+                    body: 'I\'m ok with this',
+                    author: 'joe@thomas.com'
+                },
+                {
+                    stars: 3,
+                    body: 'I\'ve seen better.',
+                    author: 'tim@hater.com'
                 }
             ]
 
